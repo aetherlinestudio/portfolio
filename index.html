@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherline | Custom Digital Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --accent-color: #e0e0e0;
+            --text-muted: #888;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--accent-color);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ethereal Background Elements */
+        .glow {
+            position: fixed;
+            top: -10%;
+            left: 50%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: clamp(3rem, 8vw, 6rem);
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-weight: 200;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Portfolio Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            position: relative;
+            transition: all 0.5s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .project-card:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 0.1rem;
+        }
+
+        .project-card p {
+            font-weight: 200;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .link-text {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            display: inline-block;
+            border-bottom: 1px solid var(--text-muted);
+            padding-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 150px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            font-size: 0.8rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        footer {
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 0.1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+    <header>
+        <div class="subtitle">Custom Web Craftsmanship</div>
+        <h1>Aetherline</h1>
+        <div class="subtitle">Where Code Becomes Art</div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <a href="https://example.com/demo1" class="project-card">
+                <div>
+                    <h3>Vespera</h3>
+                    <p>Minimalist editorial interface designed for high-end boutique narratives.</p>
+                </div>
+                <span class="link-text">Explore Demo</span>
+            </a>
+
+            <a href="https://example.com/demo2" class="project-card">
+                <div>
+                    <h3>Lumina</h3>
+                    <p>Interactive visual portfolio using custom motion-capture scroll logic.</p>
+                </div>
+                <span class="link-text">Explore Demo</span>
+            </a>
+
+            <a href="https://example.com/demo3" class="project-card">
+                <div>
+                    <h3>Aurelius</h3>
+                    <p>Bespoke commerce engine focused on luxury item presentation.</p>
+                </div>
+                <span class="link-text">Explore Demo</span>
+            </a>
+
+            <a href="https://example.com/demo4" class="project-card">
+                <div>
+                    <h3>Obsidian</h3>
+                    <p>High-performance dark UI architecture for modern creative agencies.</p>
+                </div>
+                <span class="link-text">Explore Demo</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="contact">
+        <h2>Interested?</h2>
+        <a href="mailto:hello@aetherline.com" class="contact-btn">Contact Us Now</a>
+    </section>
+
+    <footer>
+        &copy; 2026 Aetherline. All rights reserved. <br>
+        Defining the digital horizon.
+    </footer>
+
+</body>
+</html>
